@@ -1,1 +1,1 @@
-# TypeScript
+Typescript

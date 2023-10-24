@@ -1,38 +1,32 @@
 var student1 = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 20,
-    location: "New York"
+    firstName: "Zeliq",
+    lastName: "Shannon",
+    age: 40,
+    location: "Nakuru"
 };
 var student2 = {
-    firstName: "Jane",
-    lastName: "Smith",
-    age: 22,
-    location: "Los Angeles"
+    firstName: "John",
+    lastName: "Doe",
+    age: 37,
+    location: "Nairobi"
 };
 var studentsList = [student1, student2];
-// Function to render the table
-function renderTable(students) {
-    var table = document.createElement("table");
-    var tableHeader = table.createTHead();
-    var headerRow = tableHeader.insertRow();
-    // Create table headers
-    var header1 = document.createElement("th");
-    var header2 = document.createElement("th");
-    header1.textContent = "First Name";
-    header2.textContent = "Location";
-    headerRow.appendChild(header1);
-    headerRow.appendChild(header2);
-    // Create table rows for each student
-    students.forEach(function (student) {
-        var row = table.insertRow();
-        var cell1 = row.insertCell();
-        var cell2 = row.insertCell();
-        cell1.textContent = student.firstName;
-        cell2.textContent = student.location;
-    });
-    // Append the table to the document body
-    document.body.appendChild(table);
-}
-// Call the renderTable function with the studentsList array
-renderTable(studentsList);
+var table = document.createElement('table');
+var tbody = document.createElement('tbody');
+table.style.background = "pink";
+table.appendChild(tbody);
+studentsList.forEach(function (student) {
+    var row = document.createElement('tr');
+    var nameCell = document.createElement('td');
+    var locationCell = document.createElement('td');
+    nameCell.textContent = student.firstName;
+    locationCell.textContent = student.location;
+    nameCell.style.border = "1px solid pink";
+    locationCell.style.border = "1px solid pink";
+    nameCell.style.padding = "5px";
+    locationCell.style.padding = "5px";
+    row.appendChild(nameCell);
+    row.appendChild(locationCell);
+    tbody.appendChild(row);
+});
+document.body.appendChild(table);
